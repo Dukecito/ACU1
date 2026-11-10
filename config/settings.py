@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
-from django.core.management.utils import get_random_secret_key
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,9 +28,7 @@ load_dotenv(BASE_DIR / '.env')
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in {'true', '1', 'yes'}
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 if not SECRET_KEY:
-    if not DEBUG:
-        raise ImproperlyConfigured('DJANGO_SECRET_KEY must be set when DEBUG is disabled.')
-    SECRET_KEY = get_random_secret_key()
+    raise ImproperlyConfigured('DJANGO_SECRET_KEY must be set in the environment or .env file.')
 
 ALLOWED_HOSTS = [
     host.strip()
@@ -117,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
