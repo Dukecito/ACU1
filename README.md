@@ -41,3 +41,10 @@ python manage.py runserver
 
 Abre <http://127.0.0.1:8000/>. La página inicial de Django puede mostrar un 404
 hasta que se autoricen y agreguen rutas de la aplicación.
+
+## Modelos iniciales
+
+La app `ciberseguridad` contiene los modelos del código aprobado y su migración
+inicial. La migración no se aplica automáticamente. Antes de integrar con
+SAIUNISARC, verifica las entidades institucionales equivalentes para evitar
+duplicar tablas existentes.
