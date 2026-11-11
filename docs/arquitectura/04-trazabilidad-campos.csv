@@ -1,0 +1,97 @@
+﻿Formulario,Campo fuente,Procedencia,Entidad o vista,Atributo o cálculo,Tipo propuesto,Regla / pendiente,Estado
+F-GTI-01,No Incidente,Original referido en el control,Incidente,no_incidente,CharField(unique=True),Automático. Longitud y estrategia segura de consecutivo pendientes. No es el campo `Ticket`.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Fecha Reporte,Original referido en el control,Incidente,fecha_reporte,DateField,La asigna la aplicación; confirmar si se puede editar.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Hora,Original referido en el control,Incidente,hora,TimeField,La asigna la aplicación al crear el reporte.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Reportado por,Original referido en el control,Incidente,reportado_por,ForeignKey(APP_INSTITUCIONAL.Persona),Modelo institucional por verificar.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Cargo,Original referido en el control,Incidente,cargo,ForeignKey(APP_INSTITUCIONAL.Cargo),El documento indica que puede haber varios cargos; regla de selección pendiente.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Dependencia,Original referido en el control,Incidente,dependencia,ForeignKey(APP_INSTITUCIONAL.EstructuraOrganica),Derivada del cargo según la fuente; decidir si se almacena como instantánea.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Correo,Original referido en el control,Incidente,correo,EmailField,Fuente sugerida: correo institucional de Persona.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Telefono,Original referido en el control,Incidente,telefono,CharField,No usar un tipo numérico; longitud por confirmar.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Ubicacion,Original referido en el control,Incidente,ubicacion,ForeignKey(APP_INSTITUCIONAL.Sede),La fuente también requiere detalle del lugar.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Activo Afectado,Original referido en el control,Incidente,activo_afectado,CharField(choices=...),Lista inicial de la Matriz Riesgos; validar que sea el catálogo autorizado.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Tipo Evento,Original referido en el control,Incidente,tipo_evento,CharField(choices=...),Lista inicial de la columna Riesgo de Matriz Riesgos; validar.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Descripcion,Original referido en el control,Incidente,descripcion,TextField,Texto aportado por quien reporta.,Borrador; pendiente de revisión del equipo
+F-GTI-01,Evidencias,Original referido en el control,Incidente,evidencias,FileField,Acceso privado y validación de tamaño/contenido son requisitos; definir si admite varios archivos.,Borrador; pendiente de revisión del equipo
+F-GTI-02,No Incidente,Original referido en el control,Clasificacion,incidente,OneToOneField(Incidente),Una clasificación por incidente es provisional; confirmar reclasificación/historial.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Fecha Registro,Original referido en el control,Clasificacion,fecha_registro,DateField,La fuente permite que la registre la aplicación o quien registra.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Analista,Original referido en el control,Clasificacion,analista,ForeignKey(APP_INSTITUCIONAL.Persona),Modelo institucional por verificar.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Area Responsable,Original referido en el control,Clasificacion,area_responsable,ForeignKey(APP_INSTITUCIONAL.EstructuraOrganica),Distinta de la Dependencia reportante.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Ticket,Original referido en el control,Clasificacion,ticket,CharField(blank=True),Se recomienda opcional mientras se confirma la mesa de ayuda.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Clasificacion,Original referido en el control,Clasificacion,clasificacion,CharField(choices=...),La lista puede derivarse de Tipo Evento/Matriz Riesgos; confirmar semántica.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Criticidad,Original referido en el control,Clasificacion,criticidad,CharField(choices=...),"Valores documentados en SLA: Bajo, Medio, Alto, Crítico. Confirmar valor almacenado y si se permite edición.",Borrador; pendiente de revisión del equipo
+F-GTI-02,Usuarios Afectados,Original referido en el control,Clasificacion,usuarios_afectados,IntegerField` + mínimo 0,El control de mínimo 0 procede del requisito RNF de conteos no negativos.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Disponibilidad,Original referido en el control,Clasificacion,disponibilidad,CharField(choices=...),La fuente no define las opciones.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Integridad,Original referido en el control,Clasificacion,integridad,CharField(choices=...),La fuente no define las opciones.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Confidencialidad,Original referido en el control,Clasificacion,confidencialidad,CharField(choices=...),La fuente no define las opciones.,Borrador; pendiente de revisión del equipo
+F-GTI-02,Responsable,Original referido en el control,Clasificacion,responsable,ForeignKey(APP_INSTITUCIONAL.Persona),Persona responsable de atender; distinta del analista.,Borrador; pendiente de revisión del equipo
+F-GTI-03,No Incidente,Original referido en el control,Investigacion,incidente,OneToOneField(Incidente),Cardinalidad provisional; confirmar varias investigaciones/historial.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Fecha Inicio,Original referido en el control,Investigacion,fecha_inicio,DateField,La registra el investigador o la aplicación.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Investigador,Original referido en el control,Investigacion,investigador,ForeignKey(APP_INSTITUCIONAL.Persona),Modelo institucional por verificar.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Activo,Original referido en el control,Investigacion,activo,CharField(choices=...),Lista derivada inicialmente de F-GTI-01; confirmar si existe catálogo de equipos.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Inventario,Original referido en el control,Investigacion,inventario,CharField,Código de inventario institucional si existe.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Criticidad,Original referido en el control,Investigacion,incidente.clasificacion.criticidad,"Derivado, no columna","Mostrar la clasificación de F-GTI-02, evitando duplicación. Confirmar si se permite cambiar aquí.",Borrador; pendiente de revisión del equipo
+F-GTI-03,Causa Inmediata,Original referido en el control,Investigacion,causa_inmediata,TextField,Texto de investigación.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Causa Raiz,Original referido en el control,Investigacion,causa_raiz,TextField,Texto de investigación.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Vulnerabilidad,Original referido en el control,Investigacion,vulnerabilidad,TextField,Texto de investigación.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Origen,Original referido en el control,Investigacion,origen,CharField(choices=...),Opciones por confirmar.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Alcance,Original referido en el control,Investigacion,alcance,TextField,Texto de investigación.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Area afectada,Adicional propuesto,Investigacion,area_afectada,ForeignKey(APP_INSTITUCIONAL.EstructuraOrganica),Campo adicional propuesto; no sustituye Dependencia ni Area Responsable.,Borrador; pendiente de revisión del equipo
+F-GTI-03,Evidencias,Original referido en el control,Investigacion,evidencias,FileField,Privado y validado; confirmar si puede haber varios archivos.,Borrador; pendiente de revisión del equipo
+F-GTI-04,No Incidente,Original referido en el control,AccionIncidente,incidente,ForeignKey(Incidente),"Varias acciones por incidente, explícito en el plan.",Borrador; pendiente de revisión del equipo
+F-GTI-04,Actividad,Original referido en el control,AccionIncidente,actividad,TextField,Una fila por actividad para no sobrescribir acciones previas.,Borrador; pendiente de revisión del equipo
+F-GTI-04,Tipo (Contencion/Erradicacion),Original referido en el control,AccionIncidente,tipo,CharField(choices=...),"Opciones documentadas: Contención, Erradicación.",Borrador; pendiente de revisión del equipo
+F-GTI-04,Responsable,Original referido en el control,AccionIncidente,responsable,ForeignKey(APP_INSTITUCIONAL.Persona),Persona responsable de esa acción.,Borrador; pendiente de revisión del equipo
+F-GTI-04,Fecha,Original referido en el control,AccionIncidente,fecha,DateField,Fecha de la acción.,Borrador; pendiente de revisión del equipo
+F-GTI-04,Hora,Original referido en el control,AccionIncidente,hora,TimeField,Hora de la acción.,Borrador; pendiente de revisión del equipo
+F-GTI-04,Estado,Original referido en el control,AccionIncidente,estado,CharField(choices=...),Estado independiente por acción; opciones no definidas por la fuente.,Borrador; pendiente de revisión del equipo
+F-GTI-04,Observaciones,Original referido en el control,AccionIncidente,observaciones,TextField,Texto libre.,Borrador; pendiente de revisión del equipo
+F-GTI-05,No Incidente,Original referido en el control,Recuperacion,incidente,OneToOneField(Incidente)` provisional,"Si hay más de un servicio afectado, podría requerirse `ForeignKey`.",Borrador; pendiente de revisión del equipo
+F-GTI-05,Servicio,Original referido en el control,Recuperacion,servicio,CharField,Nombre del servicio afectado.,Borrador; pendiente de revisión del equipo
+F-GTI-05,Fecha Inicio,Original referido en el control,Recuperacion,fecha_inicio,DateField,La fuente no define si incluye hora.,Borrador; pendiente de revisión del equipo
+F-GTI-05,Fecha Fin,Original referido en el control,Recuperacion,fecha_fin,"DateField(null=True, blank=True)",Puede quedar pendiente mientras el servicio se recupera.,Borrador; pendiente de revisión del equipo
+F-GTI-05,Responsable,Original referido en el control,Recuperacion,responsable,ForeignKey(APP_INSTITUCIONAL.Persona),Persona responsable de recuperación.,Borrador; pendiente de revisión del equipo
+F-GTI-05,Servicio Operativo,Original referido en el control,Recuperacion,servicio_operativo,BooleanField(null=True),"Confirmación sí/no; `null` representa no confirmado, no equivale a «No».",Borrador; pendiente de revisión del equipo
+F-GTI-05,Aplicaciones Validadas,Original referido en el control,Recuperacion,aplicaciones_validadas,TextField,La fuente acepta lista o texto largo.,Borrador; pendiente de revisión del equipo
+F-GTI-05,Usuarios Verifican,Original referido en el control,Recuperacion,usuarios_verifican,BooleanField(null=True),Significado exacto por confirmar.,Borrador; pendiente de revisión del equipo
+F-GTI-05,Observaciones,Original referido en el control,Recuperacion,observaciones,TextField,Texto libre.,Borrador; pendiente de revisión del equipo
+F-GTI-06,No Incidente,Original referido en el control,Cierre,incidente,OneToOneField(Incidente)` provisional,Confirmar reapertura y cierres sucesivos.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Fecha Cierre,Original referido en el control,Cierre,fecha_cierre,DateField,La fuente permite fecha de aplicación o indicada por responsable.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Responsable,Original referido en el control,Cierre,responsable,ForeignKey(APP_INSTITUCIONAL.Persona),"Aclarar si es quien cierra, quien autoriza o ambos.",Borrador; pendiente de revisión del equipo
+F-GTI-06,Area,Original referido en el control,Cierre,area,ForeignKey(APP_INSTITUCIONAL.EstructuraOrganica),Área relacionada con el cierre.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Resumen,Original referido en el control,Cierre,resumen,TextField,Resumen del cierre.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Usuarios Afectados,Original referido en el control,Cierre,incidente.clasificacion.usuarios_afectados,"Derivado, no columna",Fuente F-GTI-02.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Tiempo Indisponibilidad,Original referido en el control,Cierre,tiempo_indisponibilidad,"DurationField(null=True, blank=True)",No calcular si no existen datos de inicio y restablecimiento suficientes.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Sistemas Afectados,Original referido en el control,Cierre,sistemas_afectados,TextField,La fuente permite consultar activos/sistemas previos.,Borrador; pendiente de revisión del equipo
+F-GTI-06,Costo Total,Original referido en el control,Cierre,costo_total,DecimalField,"El Excel propone DecimalField(12,2); precisión/escala sujetas a aprobación. Si se desconoce, dejar pendiente; no sustituir por cero.",Borrador; pendiente de revisión del equipo
+F-GTI-07,No Incidente,Original referido en el control,Leccion / AccionMejora,incidente,OneToOneField(Incidente)` provisional,Confirmar si se permite más de una revisión.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Fecha,Original referido en el control,Leccion / AccionMejora,fecha,DateField,Fecha de revisión de lo ocurrido.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Responsable,Original referido en el control,Leccion / AccionMejora,responsable,ForeignKey(APP_INSTITUCIONAL.Persona),Quien revisa/registra la lección.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Que ocurrio,Original referido en el control,Leccion / AccionMejora,que_ocurrio,TextField,Texto de lección.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Por que ocurrio,Original referido en el control,Leccion / AccionMejora,por_que_ocurrio,TextField,Texto de lección; puede consultar la investigación.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Que funciono,Original referido en el control,Leccion / AccionMejora,que_funciono,TextField,Texto de lección.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Que mejorar,Original referido en el control,Leccion / AccionMejora,que_mejorar,TextField,Texto de lección.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Evitar recurrencia,Original referido en el control,Leccion / AccionMejora,evitar_recurrencia,TextField,Los Word actualizados indican texto largo. El Excel sugiere BooleanField: discrepancia pendiente de validación; se conserva texto en este borrador.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Accion,Original referido en el control,Leccion / AccionMejora,AccionMejora.accion,TextField` en entidad hija,Una mejora por fila; permite conservar varias acciones independientes.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Responsable Accion,Original referido en el control,Leccion / AccionMejora,AccionMejora.responsable_accion,ForeignKey(APP_INSTITUCIONAL.Persona),"Quien ejecuta la mejora, distinto de quien registra la lección.",Borrador; pendiente de revisión del equipo
+F-GTI-07,Fecha Inicio,Original referido en el control,Leccion / AccionMejora,AccionMejora.fecha_inicio,DateField,Fecha de la mejora.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Fecha Fin,Original referido en el control,Leccion / AccionMejora,AccionMejora.fecha_fin,"DateField(null=True, blank=True)",Permitir pendiente mientras no termine requiere confirmación del equipo.,Borrador; pendiente de revisión del equipo
+F-GTI-07,Estado,Original referido en el control,Leccion / AccionMejora,AccionMejora.estado,CharField(choices=...),Estado propio de cada mejora; opciones por confirmar.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Consecutivo,Original referido en el control,Consulta F08,Incidente.no_incidente,Derivado / consulta,Código del incidente; no Incidente.codigo.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Fecha Reporte,Original referido en el control,Consulta F08,Incidente.fecha_reporte,Derivado / consulta,Fecha registrada en F01.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Tipo,Original referido en el control,Consulta F08,Incidente.tipo_evento,Derivado / consulta,Tipo registrado en F01.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Severidad,Original referido en el control,Consulta F08,Clasificacion.criticidad,Derivado / consulta,Dato de F02; mostrar sin clasificación cuando falte.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Area Afectada,Original referido en el control,Consulta F08,Investigacion.area_afectada,Derivado / consulta,"Área de F03, distinta de la reportante y responsable.",Borrador; pendiente de revisión del equipo
+F-GTI-08,Responsable,Original referido en el control,Consulta F08,Clasificacion.responsable,Derivado / consulta,Propuesta: responsable de atención de F02; confirmar significado de responsable en F08.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Estado,Original referido en el control,Consulta F08,Incidente.estado_general,Derivado / consulta,Estado operativo; no catálogo geográfico Estado.,Borrador; pendiente de revisión del equipo
+F-GTI-08,Fecha Cierre,Original referido en el control,Consulta F08,Cierre.fecha_cierre,Derivado / consulta,Vacío si todavía no se ha cerrado.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Fecha,Original referido en el control,Reporte F09,Filtro de fecha o mes,Agregación / indicador condicionado,Fecha de corte del reporte; sin tabla propia.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Incidentes Mes,Original referido en el control,Reporte F09,Conteo de Incidente,Agregación / indicador condicionado,Contar incidentes según fecha de reporte en el mes.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Criticos,Original referido en el control,Reporte F09,Conteo por Clasificacion.criticidad,Agregación / indicador condicionado,Contar críticos del mes; no contar por número de acciones.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Altos,Original referido en el control,Reporte F09,Conteo por Clasificacion.criticidad,Agregación / indicador condicionado,Contar altos del mes.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Medios,Original referido en el control,Reporte F09,Conteo por Clasificacion.criticidad,Agregación / indicador condicionado,Contar medios del mes.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Bajos,Original referido en el control,Reporte F09,Conteo por Clasificacion.criticidad,Agregación / indicador condicionado,Contar bajos del mes.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Tiempo Respuesta,Original referido en el control,Reporte F09,Indicador condicionado,Agregación / indicador condicionado,Sin datos si faltan marcas de tiempo fiables de reporte y primera respuesta.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Tiempo Resolucion,Original referido en el control,Reporte F09,Indicador condicionado,Agregación / indicador condicionado,Sin datos si faltan marcas de tiempo fiables de inicio y resolución.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Disponibilidad Red,Original referido en el control,Reporte F09,Fuente externa pendiente,Agregación / indicador condicionado,Mostrar Sin datos; no inventar disponibilidad de red.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Disponibilidad Servidores,Original referido en el control,Reporte F09,Fuente externa pendiente,Agregación / indicador condicionado,Mostrar Sin datos; no inventar disponibilidad de servidores.,Borrador; pendiente de revisión del equipo
+F-GTI-09,Ataques Bloqueados,Original referido en el control,Reporte F09,Fuente externa pendiente,Agregación / indicador condicionado,Mostrar Sin datos; no hay integración con sensores de ataques.,Borrador; pendiente de revisión del equipo

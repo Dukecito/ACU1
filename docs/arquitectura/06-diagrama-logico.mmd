@@ -1,0 +1,27 @@
+erDiagram
+    PERSONA ||--o{ INCIDENTE : reportado_por
+    CARGO ||--o{ INCIDENTE : cargo_reportante
+    ESTRUCTURA_ORGANICA ||--o{ INCIDENTE : dependencia
+    SEDE ||--o{ INCIDENTE : ubicacion
+
+    INCIDENTE ||--o| CLASIFICACION : clasifica
+    INCIDENTE ||--o| INVESTIGACION : investiga
+    INCIDENTE ||--o{ ACCION_INCIDENTE : atiende
+    INCIDENTE ||--o| RECUPERACION : recupera
+    INCIDENTE ||--o| CIERRE : cierra
+    INCIDENTE ||--o| LECCION : documenta
+    LECCION ||--o{ ACCION_MEJORA : propone
+
+    PERSONA ||--o{ CLASIFICACION : analista
+    ESTRUCTURA_ORGANICA ||--o{ CLASIFICACION : area_responsable
+    PERSONA ||--o{ CLASIFICACION : responsable
+
+    PERSONA ||--o{ INVESTIGACION : investigador
+    ESTRUCTURA_ORGANICA ||--o{ INVESTIGACION : area_afectada
+
+    PERSONA ||--o{ ACCION_INCIDENTE : responsable
+    PERSONA ||--o{ RECUPERACION : responsable
+    PERSONA ||--o{ CIERRE : responsable
+    ESTRUCTURA_ORGANICA ||--o{ CIERRE : area
+    PERSONA ||--o{ LECCION : responsable_revision
+    PERSONA ||--o{ ACCION_MEJORA : responsable_accion

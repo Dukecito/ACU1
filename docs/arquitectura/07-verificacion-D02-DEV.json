@@ -1,0 +1,25 @@
+{
+  "fecha_preparacion": "2026-11-11",
+  "responsable": "Diego Alejandro Carvajal Garzón",
+  "tarea": "D02-DEV",
+  "campos_por_formulario": {
+    "F-GTI-01": 13,
+    "F-GTI-02": 12,
+    "F-GTI-03": 13,
+    "F-GTI-04": 8,
+    "F-GTI-05": 9,
+    "F-GTI-06": 9,
+    "F-GTI-07": 13,
+    "F-GTI-08": 8,
+    "F-GTI-09": 11
+  },
+  "total_campos": 96,
+  "estado": "Diseño preparado; validación del equipo pendiente",
+  "horas_planeadas": 4,
+  "horas_reales": null,
+  "check_django": "System check identified no issues (0 silenced).",
+  "migraciones_aplicadas_en_esta_revision": false,
+  "produccion_accedida": false,
+  "trello_modificado": false,
+  "commit_o_push_realizado": false
+}
