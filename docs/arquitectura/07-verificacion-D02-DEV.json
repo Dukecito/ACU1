@@ -16,10 +16,16 @@
   "total_campos": 96,
   "estado": "Diseño preparado; validación del equipo pendiente",
   "horas_planeadas": 4,
-  "horas_reales": null,
+  "horas_reales": 3.45,
   "check_django": "System check identified no issues (0 silenced).",
   "migraciones_aplicadas_en_esta_revision": false,
   "produccion_accedida": false,
   "trello_modificado": false,
-  "commit_o_push_realizado": false
+  "commit_o_push_realizado": false,
+  "fecha_actualizacion_tiempo": "2026-11-13",
+  "minutos_reales": 207,
+  "inicio_confirmado": "2026-11-10T23:23:00-05:00",
+  "fin_confirmado": "2026-11-11T03:02:00-05:00",
+  "pausa_minutos": 12,
+  "registro_tiempo_compartido_actualizado": true
 }

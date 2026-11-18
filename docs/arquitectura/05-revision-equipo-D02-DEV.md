@@ -2,7 +2,7 @@
 
 Fecha de preparación: 11/11/2026. Responsable: Diego Alejandro Carvajal Garzón.
 Estado: entregables preparados; revisión y aprobación pendientes.
-Tiempo planificado: 4 h. Tiempo real: pendiente de registro por Diego.
+Tiempo planificado: 4 h. Tiempo real confirmado: 3 h 27 min (207 minutos); corregido en el registro existente del control compartido el 13/11/2026.
 
 | Decisión | Propuesta de diseño | Decisión del equipo / responsable |
 |---|---|---|
@@ -27,8 +27,13 @@ Tiempo planificado: 4 h. Tiempo real: pendiente de registro por Diego.
 - [x] Preparar paquete local de evidencia para adjuntar.
 - [ ] Revisar relaciones 1:1 y 1:N con el equipo.
 - [ ] Manuela verifica la entrega y registra observaciones.
-- [ ] Registrar horas reales de trabajo.
-- [ ] Adjuntar evidencia y actualizar el control autorizado.
+- [x] Registrar horas reales de trabajo: 3 h 27 min; sesión confirmada por Diego.
+- [x] Actualizar el control compartido con notas, enlaces y tiempo confirmado.
+- [ ] Adjuntar manualmente el PDF con el tiempo actualizado y publicar el comentario preparado.
 
-No se ha publicado evidencia ni cambiado el estado de Trello desde esta revisión.
+El PDF original está adjunto en Trello desde el 11/11/2026. El PDF actualizado
+del 13/11/2026 y el comentario de seguimiento están preparados para Diego.
+La carga automática del archivo fue rechazada por la revisión de permisos;
+queda pendiente adjuntarlo manualmente. En esta corrección no se publicó
+ningún comentario ni se cambió el estado de la tarjeta.
 No se debe marcar Hecho mientras falte la revisión exigida por la tarjeta.

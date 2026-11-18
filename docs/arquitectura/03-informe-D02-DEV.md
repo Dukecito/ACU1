@@ -160,3 +160,18 @@ siendo necesaria antes de implementar el esquema.
 
 Resultado: diseño preparado y comprobado documentalmente; aceptación de las
 relaciones por el equipo, registro de horas reales y publicación en Trello pendientes.
+
+
+## 7. Actualización del 13/11/2026
+
+Los apartados anteriores describen la revisión original del 11/11. Después,
+Diego confirmó la sesión de D02: del 10/11/2026 a las 23:23 al 11/11/2026 a las
+03:02, con 12 minutos de pausa. El tiempo efectivo es de 207 minutos (3 h 27 min).
+Se corrigió la fila existente de LOGT TIEMPO, sin sumar otra sesión. Las horas
+de TAREAS 15 DIAS se recalculan desde ese registro: 3,45 h.
+
+El PDF original ya está adjunto en Trello. El PDF actualizado y el comentario
+de seguimiento quedan preparados para Diego; la carga automática del archivo
+fue rechazada por la revisión de permisos. La propuesta técnica no cambió.
+La revisión de relaciones por el equipo y Manuela sigue pendiente; la tarea
+permanece En revisión. No se hicieron commits, push ni migraciones.

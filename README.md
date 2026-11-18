@@ -5,13 +5,14 @@ configura ni debe conectarse a una base de datos de producción.
 
 ## Requisitos
 
-- Python 3.14
+- Python 3.12 o superior. QA comprobó el proyecto con Python 3.12; el entorno
+  local de desarrollo usa Python 3.14.
 - Git
 
 ## Instalación en Windows (PowerShell)
 
 ```powershell
-py -3.14 -m venv .venv
+py -3 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 Copy-Item .env.example .env
@@ -44,7 +45,18 @@ hasta que se autoricen y agreguen rutas de la aplicación.
 
 ## Modelos iniciales
 
-La app `ciberseguridad` contiene los modelos del código aprobado y su migración
+La app `ciberseguridad` contiene los modelos del código disponible y su migración
 inicial. La migración no se aplica automáticamente. Antes de integrar con
 SAIUNISARC, verifica las entidades institucionales equivalentes para evitar
 duplicar tablas existentes.
+
+## Estado de la integración institucional
+
+ACU1 es la base de desarrollo disponible. La integración con el proyecto completo
+SAIUNISARC todavía no está verificada: falta confirmar el repositorio y la rama
+institucional, la ubicación real de los modelos compartidos y el enlace entre
+la cuenta de acceso y Persona. Este pendiente se registra como B-01 en el control
+del proyecto y requiere confirmar el enfoque de trabajo con Katerin.
+
+El [diagnóstico de D01-DEV](docs/diagnostico/Diagnostico_D01_DEV.md) describe los
+archivos revisados, las comprobaciones realizadas y las dependencias pendientes.
